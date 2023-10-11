@@ -3,7 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - cd Calculator.Wasm
+        - cd src/Calculator.Wasm
         - curl -sSL https://dot.net/v1/dotnet-install.sh > dotnet-install.sh
         - chmod +x *.sh
         - ./dotnet-install.sh -c 7.0 -InstallDir ./dotnet7
@@ -12,7 +12,7 @@ frontend:
       commands:
         - ./dotnet7/dotnet publish -c Release -o release
   artifacts:
-    baseDirectory: /Calculator.Wasm/release/
+    baseDirectory: src/Calculator.Wasm/release/
     files:
       - '**/*'
   cache:
